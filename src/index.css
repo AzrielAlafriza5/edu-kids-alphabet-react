@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Quicksand:wght@500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Quicksand", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Fredoka", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer utilities {
+  .bg-pattern {
+    background-image: radial-gradient(#bae6fd 2px, transparent 2px);
+    background-size: 40px 40px;
+  }
+  
+  .bubble-border {
+    border: 6px solid #FFF;
+    box-shadow: 0 8px 0 rgba(0,0,0,0.05);
+  }
+
+  .floating-hand {
+    animation: float 2s ease-in-out infinite;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-15px) scale(1.1); }
+}
