@@ -23,8 +23,8 @@ export function DroppableSlot({ id, expectedLetter, isFilled, index }: Droppable
         isFilled 
           ? 'bg-transparent shadow-inner z-10 border-transparent' 
           : isOver 
-            ? 'bg-white/80 border-dashed border-white' 
-            : 'bg-white/50 border-dashed border-white'
+            ? 'bg-white border-dashed border-[#5A8DCC]/50 shadow-md' 
+            : 'bg-white/70 border-dashed border-white/80 shadow-inner'
       }`}
     >
       {!isFilled && (

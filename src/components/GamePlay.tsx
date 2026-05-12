@@ -56,6 +56,7 @@ export function GamePlay({ category, wordConfig, onBack, onNext, onWordComplete,
     const freshSlots = new Array(letters.length).fill(null);
     setPlacedLetters(freshSlots);
     setIsComplete(false);
+    completionHandled.current = false;
 
     // Generate scattered letters with unique IDs including word context to avoid clashes on fast transition
     const scattered = letters.map((char, index) => {
@@ -141,17 +142,6 @@ export function GamePlay({ category, wordConfig, onBack, onNext, onWordComplete,
       setPlacedLetters(prev => {
         const next = [...prev];
         next[slotIndex] = active.id as string;
-        
-        // Check for completion inside the state update to ensure we have latest data
-        if (next.every(item => item !== null) && !completionHandled.current) {
-          completionHandled.current = true;
-          setIsComplete(true);
-          playTada();
-          triggerVictoryConfetti();
-          onWordComplete?.();
-          setTimeout(() => speakWord(word, language === 'id' ? 'id-ID' : 'en-US'), 1000);
-        }
-        
         return next;
       });
 
@@ -161,7 +151,23 @@ export function GamePlay({ category, wordConfig, onBack, onNext, onWordComplete,
       playDing();
       speakWord(activeChar, language === 'id' ? 'id-ID' : 'en-US'); // Pronounce the single letter
     }
-  }, [letters, word, placedLetters, triggerVictoryConfetti]);
+  }, [letters, placedLetters, language]);
+
+  // Completion Detection
+  useEffect(() => {
+    if (placedLetters.length > 0 && 
+        placedLetters.every(item => item !== null) && 
+        !isComplete && 
+        !completionHandled.current) {
+      
+      completionHandled.current = true;
+      setIsComplete(true);
+      playTada();
+      triggerVictoryConfetti();
+      onWordComplete?.();
+      setTimeout(() => speakWord(word, language === 'id' ? 'id-ID' : 'en-US'), 1000);
+    }
+  }, [placedLetters, isComplete, word, language, triggerVictoryConfetti, onWordComplete]);
 
   const handleNextClick = () => {
     playTransitionSound(category.id);
@@ -196,7 +202,7 @@ export function GamePlay({ category, wordConfig, onBack, onNext, onWordComplete,
             >
               {category.icon}
             </motion.div>
-            <h2 className="text-4xl md:text-7xl font-black text-white font-display uppercase tracking-widest drop-shadow-lg">
+            <h2 className="text-4xl md:text-7xl font-black text-white font-display uppercase tracking-widest drop-shadow-sm">
               {t.next}!
             </h2>
           </motion.div>
@@ -257,7 +263,7 @@ export function GamePlay({ category, wordConfig, onBack, onNext, onWordComplete,
           </button>
         </div>
 
-        <h1 className="flex-1 text-center text-[10px] xs:text-[12px] sm:text-lg md:text-3xl font-black text-[#5A8DCC] tracking-tight uppercase drop-shadow-[0_2px_2px_rgba(0,0,0,0.1)] overflow-hidden text-ellipsis whitespace-nowrap px-1">
+        <h1 className="flex-1 text-center text-sm xs:text-base sm:text-xl md:text-4xl font-black text-[#5A8DCC] tracking-tight uppercase drop-shadow-[0_2px_2px_rgba(0,0,0,0.1)] overflow-hidden text-ellipsis whitespace-nowrap px-1">
           {t.tiru}
         </h1>
         
@@ -298,7 +304,7 @@ export function GamePlay({ category, wordConfig, onBack, onNext, onWordComplete,
               >
                 <div className="absolute inset-0 rounded-[21px] md:rounded-[52px] border-[3px] md:border-[6px]" style={{ borderColor: themeColor, opacity: 0.3 }} />
                 
-                <span className="text-5xl sm:text-7xl md:text-[8rem] z-10 drop-shadow-md md:drop-shadow-lg">{wordConfig.emoji}</span>
+                <span className="text-5xl sm:text-7xl md:text-[8rem] z-10 drop-shadow-sm">{wordConfig.emoji}</span>
                 
                 {/* Checkmark Badge */}
                 {isComplete && (
@@ -326,7 +332,7 @@ export function GamePlay({ category, wordConfig, onBack, onNext, onWordComplete,
             </div>
 
             {/* Target Slots Container */}
-            <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 md:gap-3 max-w-full md:max-w-4xl p-2 md:p-6 bg-white/20 backdrop-blur-xs rounded-[20px] md:rounded-[40px] border border-white/30 mb-8">
+            <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 md:gap-3 max-w-full md:max-w-4xl p-3 md:p-8 bg-white/30 backdrop-blur-sm rounded-[25px] md:rounded-[50px] border-2 border-white/50 mb-8 shadow-inner">
               {letters.map((char, index) => (
                 <DroppableSlot 
                   key={`slot-${word}-${index}`} 

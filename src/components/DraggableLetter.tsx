@@ -42,8 +42,11 @@ export function LetterVisual({ char, index, isDragging, isOverlay, isPlaced, sca
           duration: 3 + (index * 0.5), 
           ease: "easeInOut" 
         }}
-        className="w-full h-full flex items-center justify-center relative drop-shadow-[0_8px_4px_rgba(0,0,0,0.15)]"
-        style={{ WebkitTextStroke: '4px white' } as React.CSSProperties}
+        className="w-full h-full flex items-center justify-center relative drop-shadow-[0_2px_1px_rgba(0,0,0,0.15)]"
+        style={{ 
+          WebkitTextStroke: '1.5px white',
+          paintOrder: 'stroke fill'
+        } as React.CSSProperties}
       >
         {char}
       </motion.div>

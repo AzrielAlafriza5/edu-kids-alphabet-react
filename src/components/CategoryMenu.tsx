@@ -45,7 +45,7 @@ export function CategoryMenu({ onSelect, onBack, progress, points, isBgmOn, togg
           </button>
         </div>
 
-        <h2 className="flex-1 text-center text-[10px] xs:text-[12px] sm:text-lg md:text-3xl font-display font-black text-[#5A8DCC] drop-shadow-[0_2px_2px_rgba(0,0,0,0.1)] uppercase tracking-wider overflow-hidden text-ellipsis whitespace-nowrap px-1">
+        <h2 className="flex-1 text-center text-sm xs:text-base sm:text-xl md:text-4xl font-display font-black text-[#5A8DCC] drop-shadow-[0_2px_2px_rgba(0,0,0,0.1)] uppercase tracking-wider overflow-hidden text-ellipsis whitespace-nowrap px-1">
           {t.choose}
         </h2>
 
@@ -98,14 +98,14 @@ export function CategoryMenu({ onSelect, onBack, progress, points, isBgmOn, togg
 
                 {/* Requirement Overlay */}
                 {isLocked && (
-                  <div className="absolute bottom-3 left-1/2 -translate-x-1/2 z-20 bg-white/90 backdrop-blur px-2 md:px-3 py-0.5 md:py-1 rounded-full shadow-md border border-red-200">
-                    <p className="text-[8px] md:text-sm font-black text-red-600 uppercase tracking-tighter whitespace-nowrap">
+                  <div className="z-20 bg-white/90 backdrop-blur px-2 md:px-3 py-0.5 md:py-1 rounded-full shadow-md border border-red-200 mt-1 mb-1">
+                    <p className="text-[10px] md:text-sm font-black text-red-600 uppercase tracking-tighter whitespace-nowrap">
                       {t.locked} {cat.requiredPoints} ⭐
                     </p>
                   </div>
                 )}
 
-                <span className={`text-4xl sm:text-5xl md:text-7xl mb-2 md:mb-4 drop-shadow-md z-10 transition-transform ${isLocked ? '' : 'group-hover:scale-110'}`}>
+                <span className={`text-4xl sm:text-5xl md:text-7xl mb-2 md:mb-4 drop-shadow-sm z-10 transition-transform ${isLocked ? '' : 'group-hover:scale-110'}`}>
                   {cat.icon}
                 </span>
                 

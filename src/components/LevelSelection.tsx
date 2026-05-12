@@ -36,7 +36,7 @@ export function LevelSelection({ category, completedLevels, onSelect, onBack, po
           </button>
         </div>
 
-        <h2 className="flex-1 text-center text-[10px] xs:text-[12px] sm:text-lg md:text-2xl lg:text-3xl font-black text-[#5A8DCC] uppercase tracking-tight overflow-hidden text-ellipsis whitespace-nowrap px-1">
+        <h2 className="flex-1 text-center text-sm xs:text-base sm:text-xl md:text-3xl lg:text-4xl font-black text-[#5A8DCC] uppercase tracking-tight drop-shadow-sm overflow-hidden text-ellipsis whitespace-nowrap px-1">
           {t.select} {language === 'id' ? category.name.id : category.name.en}
         </h2>
  

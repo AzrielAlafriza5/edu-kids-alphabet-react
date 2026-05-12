@@ -75,28 +75,28 @@ export function WelcomeScreen({ onStart, t, language, setLanguage }: WelcomeScre
       <motion.div 
         animate={{ y: [-10, 10, -10], rotate: [-10, 10, -10] }}
         transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-        className="absolute -top-8 -left-6 md:-top-12 md:-left-8 text-5xl md:text-7xl drop-shadow-lg"
+        className="absolute -top-8 -left-6 md:-top-12 md:-left-8 text-5xl md:text-7xl drop-shadow-sm"
       >
         🦁
       </motion.div>
       <motion.div 
         animate={{ y: [0, -15, 0], rotate: [0, 5, 0] }}
         transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-        className="absolute -bottom-6 -left-4 md:-bottom-8 md:-left-6 text-5xl md:text-7xl drop-shadow-lg z-0"
+        className="absolute -bottom-6 -left-4 md:-bottom-8 md:-left-6 text-5xl md:text-7xl drop-shadow-sm z-0"
       >
         🧑‍🚀
       </motion.div>
       <motion.div 
         animate={{ y: [-15, 15, -15], rotate: [15, -15, 15] }}
         transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-        className="absolute -top-6 -right-4 md:-top-10 md:-right-6 text-5xl md:text-7xl drop-shadow-lg z-0"
+        className="absolute -top-6 -right-4 md:-top-10 md:-right-6 text-5xl md:text-7xl drop-shadow-sm z-0"
       >
         🍎
       </motion.div>
       <motion.div 
         animate={{ y: [0, 15, 0], rotate: [0, -5, 0] }}
         transition={{ repeat: Infinity, duration: 4.5, ease: "easeInOut", delay: 0.5 }}
-        className="absolute -bottom-6 -right-4 md:-bottom-8 md:-right-6 text-5xl md:text-7xl drop-shadow-lg z-0"
+        className="absolute -bottom-6 -right-4 md:-bottom-8 md:-right-6 text-5xl md:text-7xl drop-shadow-sm z-0"
       >
         🧸
       </motion.div>
@@ -104,7 +104,7 @@ export function WelcomeScreen({ onStart, t, language, setLanguage }: WelcomeScre
       <motion.h1 
         animate={{ scale: [1, 1.05, 1], rotate: [-1, 1, -1] }}
         transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
-        className="text-4xl md:text-6xl lg:text-7xl font-display font-black text-[#5A8DCC] drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)] uppercase leading-tight mb-4 md:mb-6"
+        className="text-4xl md:text-6xl lg:text-7xl font-display font-black text-[#5A8DCC] uppercase tracking-tight drop-shadow-md leading-tight mb-4 md:mb-6"
       >
         PINTAR <br /> ALFABET
       </motion.h1>
