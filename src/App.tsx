@@ -9,7 +9,7 @@ import { startBgm, stopBgm, playBlup } from './lib/audio';
 import { Volume2, VolumeX } from 'lucide-react';
 
 export type ScreenState = 'welcome' | 'categories' | 'levels' | 'game';
-export type Language = 'id' | 'en';
+export type Language = 'id' | 'en' | 'es' | 'de';
 
 const TRANSLATIONS = {
   id: {
@@ -39,6 +39,34 @@ const TRANSLATIONS = {
     tiru: 'Copy Words',
     choose_lang: 'Choose Language',
     locked: 'Need',
+  },
+  es: {
+    start: 'EMPEZAR',
+    choose: 'ELEGIR CATEGORÍA',
+    categories: 'Categorías',
+    back: 'ATRÁS',
+    points: 'Puntos',
+    progress: 'Progreso',
+    finish: 'TERMINAR',
+    next: 'SIGUIENTE',
+    select: 'Seleccionar',
+    tiru: 'Copiar Palabras',
+    choose_lang: 'Elegir Idioma',
+    locked: 'Necesitas',
+  },
+  de: {
+    start: 'START',
+    choose: 'KATEGORIE WÄHLEN',
+    categories: 'Kategorien',
+    back: 'ZURÜCK',
+    points: 'Punkte',
+    progress: 'Fortschritt',
+    finish: 'BEENDEN',
+    next: 'WEITER',
+    select: 'Wählen',
+    tiru: 'Wörter kopieren',
+    choose_lang: 'Sprache wählen',
+    locked: 'Benötigt',
   }
 };
 

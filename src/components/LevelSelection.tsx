@@ -12,7 +12,7 @@ interface LevelSelectionProps {
   points: number;
   isBgmOn: boolean;
   toggleBgm: () => void;
-  language: 'id' | 'en';
+  language: 'id' | 'en' | 'es' | 'de';
   t: any;
 }
 
@@ -37,7 +37,7 @@ export function LevelSelection({ category, completedLevels, onSelect, onBack, po
         </div>
 
         <h2 className="flex-1 text-center text-sm xs:text-base sm:text-xl md:text-3xl lg:text-4xl font-black text-[#5A8DCC] uppercase tracking-tight drop-shadow-sm overflow-hidden text-ellipsis whitespace-nowrap px-1">
-          {t.select} {language === 'id' ? category.name.id : category.name.en}
+          {t.select} {(category.name as any)[language === 'id' ? 'id' : language] || category.name.en}
         </h2>
  
         <div className="flex-none flex items-center gap-1.5 md:gap-3 flex-nowrap">
@@ -80,7 +80,7 @@ export function LevelSelection({ category, completedLevels, onSelect, onBack, po
                   {word.emoji}
                 </div>
                 <span className="text-[10px] md:text-sm font-black text-[#5A8DCC] uppercase tracking-tighter truncate w-full text-center px-1">
-                  {language === 'id' ? word.id : word.en}
+                  {(word as any)[language === 'id' ? 'id' : language] || word.en}
                 </span>
 
                 {isCompleted && (

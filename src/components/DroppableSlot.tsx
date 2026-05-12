@@ -19,16 +19,16 @@ export function DroppableSlot({ id, expectedLetter, isFilled, index }: Droppable
   return (
     <div
       ref={setNodeRef}
-      className={`w-12 h-16 sm:w-16 sm:h-20 md:w-20 md:h-28 rounded-xl md:rounded-3xl border-2 md:border-4 flex items-center justify-center transition-colors relative shrink-0 ${
+      className={`w-12 h-16 sm:w-16 sm:h-20 md:w-28 md:h-36 rounded-2xl md:rounded-[36px] border-[4px] md:border-[8px] flex items-center justify-center transition-all relative shrink-0 ${
         isFilled 
-          ? 'bg-transparent shadow-inner z-10 border-transparent' 
+          ? 'bg-transparent border-transparent' 
           : isOver 
-            ? 'bg-white border-dashed border-[#5A8DCC]/50 shadow-md' 
-            : 'bg-white/70 border-dashed border-white/80 shadow-inner'
+            ? 'bg-white border-[#4E88E5] shadow-2xl scale-110 rotate-2' 
+            : 'bg-white/40 border-white/60 shadow-inner'
       }`}
     >
       {!isFilled && (
-        <span className="text-3xl sm:text-4xl md:text-5xl font-display font-black text-[#5A8DCC] opacity-30 pointer-events-none">
+        <span className="text-3xl sm:text-4xl md:text-6xl font-display font-black text-white/50 pointer-events-none drop-shadow-sm uppercase">
           {expectedLetter}
         </span>
       )}

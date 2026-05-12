@@ -42,10 +42,12 @@ export function LetterVisual({ char, index, isDragging, isOverlay, isPlaced, sca
           duration: 3 + (index * 0.5), 
           ease: "easeInOut" 
         }}
-        className="w-full h-full flex items-center justify-center relative drop-shadow-[0_2px_1px_rgba(0,0,0,0.15)]"
+        className="w-full h-full flex items-center justify-center relative drop-shadow-[0_8px_4px_rgba(0,0,0,0.15)]"
         style={{ 
-          WebkitTextStroke: '1.5px white',
-          paintOrder: 'stroke fill'
+          WebkitTextStroke: '3px white',
+          paintOrder: 'stroke fill',
+          strokeLinejoin: 'round',
+          strokeLinecap: 'round'
         } as React.CSSProperties}
       >
         {char}

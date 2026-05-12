@@ -8,13 +8,22 @@
 
 @layer utilities {
   .bg-pattern {
-    background-image: radial-gradient(#bae6fd 2px, transparent 2px);
-    background-size: 40px 40px;
+    background-color: #E0F2FE;
+    background-image: radial-gradient(#bae6fd 3px, transparent 3px);
+    background-size: 30px 30px;
+  }
+  
+  .card-shadow {
+    box-shadow: 0 20px 50px rgba(90, 141, 204, 0.15);
+  }
+
+  .text-shadow-kids {
+    text-shadow: 4px 4px 0px rgba(0,0,0,0.1);
   }
   
   .bubble-border {
-    border: 6px solid #FFF;
-    box-shadow: 0 8px 0 rgba(0,0,0,0.05);
+    border: 8px solid #FFF;
+    box-shadow: 0 10px 0 rgba(0,0,0,0.05);
   }
 
   .floating-hand {
