@@ -26,7 +26,9 @@ export default defineConfig(({mode}) => {
     preview: {
       port: 8080,
       host: '0.0.0.0',
-      allowedHosts: true,
+      allowedHosts: [
+        'edu-kids-alphabet-react-917363380044.asia-southeast2.run.app'
+      ],
     },
   };
 });
