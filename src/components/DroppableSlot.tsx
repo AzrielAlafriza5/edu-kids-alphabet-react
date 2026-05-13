@@ -24,11 +24,11 @@ export function DroppableSlot({ id, expectedLetter, isFilled, index }: Droppable
           ? 'bg-transparent border-transparent' 
           : isOver 
             ? 'bg-white border-[#4E88E5] shadow-2xl scale-110 rotate-2' 
-            : 'bg-white/40 border-white/60 shadow-inner'
+            : 'bg-white/80 border-[#4E88E5]/30 shadow-md'
       }`}
     >
       {!isFilled && (
-        <span className="text-3xl sm:text-4xl md:text-6xl font-display font-black text-white/50 pointer-events-none drop-shadow-sm uppercase">
+        <span className="text-3xl sm:text-4xl md:text-6xl font-display font-black text-[#4E88E5]/30 pointer-events-none drop-shadow-sm uppercase">
           {expectedLetter}
         </span>
       )}

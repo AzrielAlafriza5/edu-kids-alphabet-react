@@ -367,7 +367,7 @@ export function GamePlay({ category, wordConfig, onBack, onNext, onWordComplete,
             </div>
 
             {/* Slots */}
-            <div className="flex flex-wrap items-center justify-center gap-2 md:gap-5 max-w-full md:max-w-7xl p-6 md:p-14 bg-white/40 backdrop-blur-md rounded-[40px] md:rounded-[80px] border-[6px] border-white/50 mb-12 shadow-inner">
+            <div className="flex flex-wrap items-center justify-center gap-2 md:gap-5 max-w-full md:max-w-7xl p-6 md:p-14 bg-white/60 backdrop-blur-md rounded-[40px] md:rounded-[80px] border-[6px] border-white/50 mb-12 shadow-inner">
               {letters.map((char, index) => (
                 <DroppableSlot 
                   key={`slot-${word}-${index}`} 
