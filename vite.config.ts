@@ -20,7 +20,7 @@ export default defineConfig(({mode}) => {
       // Do not modifyâfile watching is disabled to prevent flickering during agent edits.
       hmr: process.env.DISABLE_HMR !== 'true',
       allowedHosts: [
-        'pintar-alfabet-app-896328394373.asia-southeast2.run.app'
+        'edu-kids-alphabet-react-917363380044.asia-southeast2.run.app'
       ]
     },
     preview: {
